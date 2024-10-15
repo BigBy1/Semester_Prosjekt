@@ -24,18 +24,28 @@ public class GPSUtils {
 
 	public static double findMin(double[] da) {
 
-		double min;
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		double min=da[0];
+		
+		for (int i = 0; i<da.length;i++) {
+			if(min>da[i]) {
+				min=da[i];
+			}
+		}
+		return min;
+		
 		
 	}
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		double[] latitudes = new double [gpspoints.length];
 		
-		// TODO
+		for (int i=0; i<gpspoints.length; i++) {
+			latitudes[i] = gpspoints[i].getLatitude();
+		}
+		
+		
+		return latitudes;
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {

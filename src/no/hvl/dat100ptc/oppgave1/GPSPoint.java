@@ -6,7 +6,6 @@ import no.hvl.dat100ptc.TODO;
 
 public class GPSPoint {
 	
-	// TODO - objektvariable
 	
 	private int time;
 	
