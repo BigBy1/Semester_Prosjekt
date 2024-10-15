@@ -1,6 +1,5 @@
 package no.hvl.dat100ptc.oppgave2;
 
-import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSDataConverter {
@@ -13,37 +12,17 @@ public class GPSDataConverter {
 		int secs;
 		int hr, min, sec;
 		
-		//henter ut timer fra stringen
-		char hrC1 = timestr.charAt(11);
-		char hrC2 = timestr.charAt(12);
+		String str = timestr.substring(TIME_STARTINDEX);
 		
-		//henter ut minutter fra stringen
-		char minC1 = timestr.charAt(14);
-		char minC2 = timestr.charAt(15);
+		//henter ut timer
+		hr = Integer.parseInt(str.substring(0,2));
 		
-		//henter ut sekunder fra stringen
-		char secC1 = timestr.charAt(17);
-		char secC2 = timestr.charAt(18);
+		//henter ut minutter
+		min = Integer.parseInt(str.substring(3,5));
 		
-		//gjør om char til Streng
+		//henter ut sekunder
+		sec = Integer.parseInt(str.substring(6,8));
 		
-		String hrS1 = String.valueOf(hrC1);
-		String hrS2 = String.valueOf(hrC2);
-		String hrS = hrS1+hrS2;
-		
-		String minS1 = String.valueOf(minC1);
-		String minS2 = String.valueOf(minC2);
-		String minS = minS1+minS2;
-		
-		String secS1 = String.valueOf(secC1);
-		String secS2 = String.valueOf(secC2);
-		String secS = secS1+secS2;
-		
-		//Gjør om Streng til int
-		
-		hr=Integer.parseInt(hrS);
-		min=Integer.parseInt(minS);
-		sec=Integer.parseInt(secS);
 		
 		// få alt til sekunder
 		secs = hr*60*60+min*60+sec;
