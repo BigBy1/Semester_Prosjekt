@@ -109,22 +109,57 @@ public class GPSUtils {
 
 		int secs;
 		double speed;
+		double lengde;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		int secs1 = gpspoint1.getTime();
+		int secs2 = gpspoint2.getTime();
+		secs=secs2-secs1;
+		lengde= distance(gpspoint1, gpspoint2);
 		
-		// TODO
-
+		speed = lengde/secs;
+		
+		return speed;
 	}
 
 	public static String formatTime(int secs) {
 
 		String timestr;
 		String TIMESEP = ":";
+		
+		String timerstr;
+		String minutterstr;
+		String secsstr;
 
-		throw new UnsupportedOperationException(TODO.method());
+		int timer = secs/3600;
+		int rest = secs%3600;
+		int minutter = rest/60;
+		secs = rest%60;
 		
-		// TODO 
+		if (timer<10) {
+			timerstr=0+""+timer;
+		}
+		else {
+			timerstr=""+timer;
+		}
 		
+		if (minutter<10) {
+			minutterstr=0+""+minutter;
+		}
+		else {
+			minutterstr=""+minutter;
+		}
+		
+		if (secs<10) {
+			secsstr=0+""+secs;
+		}
+		else {
+			secsstr=""+secs;
+		}
+		
+		
+		timestr = "  "+timerstr + ":"+minutterstr+":" + secsstr;
+		
+		return timestr;
 	}
 	
 	private static int TEXTWIDTH = 10;
