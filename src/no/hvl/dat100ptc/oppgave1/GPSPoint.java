@@ -83,7 +83,6 @@ public class GPSPoint {
 		
 		return str;
 
-		// TODO
 		
 	}
 }

@@ -50,11 +50,14 @@ public class GPSUtils {
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
+		double[] longetudes = new double [gpspoints.length];
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i=0; i<gpspoints.length; i++) {
+			longetudes[i] = gpspoints[i].getLongitude();
+		}
 		
-		// TODO 
-
+		
+		return longetudes;
 	}
 
 	private static final int R = 6371000; // jordens radius
@@ -63,10 +66,24 @@ public class GPSUtils {
 
 		double d;
 		double latitude1, longitude1, latitude2, longitude2;
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO 
+		double longitude, latitude;
+		
+		
+		latitude1=Math.toRadians(gpspoint1.getLatitude());
+		longitude1=Math.toRadians(gpspoint1.getLongitude());
+		
+		latitude2=Math.toRadians(gpspoint2.getLatitude());
+		longitude2=Math.toRadians(gpspoint2.getLongitude());
+		
+		longitude = longitude2-longitude1;
+		latitude = latitude2-latitude1;
+		
+		double a =Math.pow(Math.sin(latitude/2), 2)+Math.cos(latitude1)*Math.cos(latitude2)*Math.pow(Math.sin(longitude/2),2);
+		double c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		d = R*c;
+		
+		return d;
+		
 	}
 	
 	private static double compute_a(double phi1, double phi2, double deltaphi, double deltadelta) {
