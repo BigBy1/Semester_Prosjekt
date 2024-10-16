@@ -167,11 +167,17 @@ public class GPSUtils {
 	public static String formatDouble(double d) {
 
 		String str;
-
+		d=d+0.005;
+		d=100*d;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		int int1 = (int) (d);
 		
-		// TODO
+		
+		d= int1/100.0;
+		
+		str="      "+d;
+		System.out.print(d);
+		return str;
 		
 	}
 }
