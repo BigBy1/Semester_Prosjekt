@@ -176,7 +176,6 @@ public class GPSUtils {
 		d= int1/100.0;
 		
 		str="      "+d;
-		System.out.print(d);
 		return str;
 		
 	}
