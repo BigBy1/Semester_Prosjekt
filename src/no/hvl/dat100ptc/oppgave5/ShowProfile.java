@@ -26,6 +26,7 @@ public class ShowProfile extends EasyGraphics {
 
 		gpspoints = gpscomputer.getGPSPoints();
 		
+		
 	}
 
 	public static void main(String[] args) {
@@ -45,10 +46,20 @@ public class ShowProfile extends EasyGraphics {
 	public void showHeightProfile(int ybase) {
 		
 		int x = MARGIN; // første høyde skal tegnes ved MARGIN
+		int width = 6;
+		int hight = 0;
 		int y;
 		
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		
+		
+		for (int i = 0; i<gpspoints.length; i++) {
+			y = (int) gpspoints[i].getElevation();
+			
+			 fillRectangle (x, ybase-hight, width, hight);
+		x+=20;
+		}
+		
+		
 		
 
 	}
