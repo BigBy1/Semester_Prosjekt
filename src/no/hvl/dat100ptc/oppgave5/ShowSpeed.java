@@ -16,6 +16,7 @@ public class ShowSpeed extends EasyGraphics {
 	private static int BARHEIGHT = 100; 
 
 	private GPSComputer gpscomputer;
+	private double[] speeds; 
 	
 	public ShowSpeed() {
 
@@ -38,11 +39,24 @@ public class ShowSpeed extends EasyGraphics {
 	}
 	
 	public void showSpeedProfile(int ybase) {
+		speeds = gpscomputer.speeds();
+		
 		
 		int x = MARGIN,y;
+		int width =10;
+		int hight;
+		
+		
+		for (int i =0; i<speeds.length;i++) {
+			hight = (int) this.speeds[i];
+			
+			if (hight > 0 && hight <= BARHEIGHT) {
+				fillRectangle(x, ybase - hight, width, hight);
+		x+=20;
+		}
 	
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
+		
 		
 	}
+}
 }
