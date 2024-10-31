@@ -78,7 +78,8 @@ public class GPSUtils {
 		longitude = longitude2-longitude1;
 		latitude = latitude2-latitude1;
 		
-		double a =Math.pow(Math.sin(latitude/2), 2)+Math.cos(latitude1)*Math.cos(latitude2)*Math.pow(Math.sin(longitude/2),2);
+		double a =Math.pow(Math.sin(latitude/2), 2)+Math.cos(latitude1)*Math.cos
+				(latitude2)*Math.pow(Math.sin(longitude/2),2);
 		double c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 		d = R*c;
 		
